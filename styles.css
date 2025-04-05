@@ -8,7 +8,50 @@ body, html {
     color: #e0e0e0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+/* Add this block anywhere in your styles.css file */
+#company-logo {
+    position: absolute;
+    top: 15px; /* Adjust vertical position as needed */
+    left: 25px; /* Adjust horizontal position as needed */
+    z-index: 5; /* Above canvas, below topic page/buttons */
+    font-family: 'Bebas Neue', sans-serif; /* Netflix-like font */
+    font-size: 2.2em; /* Adjust size as needed */
+    font-weight: 400; /* Bebas Neue is often bold by default */
+    color: #febc07; /* Gold color */
+    text-transform: uppercase; /* Make it uppercase like Netflix logo */
+    letter-spacing: 1px; /* Optional: Add slight spacing */
+    user-select: none; /* Prevent text selection */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Optional: Subtle shadow for depth */
+}
+/* Add these new rule blocks */
+#contact-info {
+    position: absolute;
+    top: 15px;        /* Align vertically with logo/top bar */
+    right: 25px;       /* Padding from the right edge */
+    z-index: 5;        /* Same level as logo */
+    text-align: right; /* Align text lines to the right */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Professional sans-serif */
+    font-size: 0.85em; /* Adjust size as needed (slightly smaller) */
+    line-height: 1.4;  /* Adjust line spacing */
+}
 
+#contact-info .contact-line,
+#contact-info .contact-link {
+    color: #FFFFFF;    /* White text */
+    margin: 0;         /* Remove default margins */
+    padding: 0;        /* Remove default padding */
+    display: block;    /* Ensure link takes its own line */
+}
+
+#contact-info .contact-link {
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.2s ease; /* Smooth color transition */
+}
+
+#contact-info .contact-link:hover {
+    color: #CCCCCC;           /* Slightly dimmer on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
 /* Canvas Styling */
 #graphCanvas {
     position: absolute;
@@ -19,6 +62,40 @@ body, html {
     z-index: 0; /* Behind the content */
     display: block;
 }
+
+#company-logo {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    z-index: 5; /* Above graph, below topic page */
+    /* ... other logo styles ... */
+}
+
+.center-content { /* #main-page */
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Above graph */
+    /* ... other styles ... */
+}
+
+#categoryButtons {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Above graph and logo/top-bar */
+     /* ... other styles ... */
+}
+
+#topic-page {
+    position: absolute;
+    /* ... */
+    z-index: 20; /* Above everything */
+    /* ... */
+}
+
 
 /* Top Bar Container - UPDATED */
 .center-content { /* This is #main-page */
@@ -39,13 +116,14 @@ body, html {
     /* border-radius: 8px; */
 }
 
+
 /* Title Styling - UPDATED */
 .main-title {
-    border: 1px solid rgb(232, 150, 9);
+    border: 1px solid rgb(255, 255, 255);
     font-size: 1.6em;
     font-weight: 200;
     margin: 0; /* Remove default margins */
-    color: #E50914;
+    color: #ffffff;
     white-space: nowrap; /* Prevent wrapping */
     flex-shrink: 0; /* Prevent shrinking */
     padding: 2px 8px; /* Padding inside border */

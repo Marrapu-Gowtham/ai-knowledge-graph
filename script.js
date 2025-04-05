@@ -602,7 +602,7 @@ const topics = {
         use_cases: ["Manufacturing automation", "Logistics (warehouse robots)", "Surgery assistance", "Space exploration (rovers)", "Autonomous vehicles"],
         analogy: "Robotics is like building artificial creatures or agents that can physically interact with and perform tasks in the real world."
     },
-    " ros ": { // Robot Operating System
+    "ros": { // Robot Operating System
         category: "Robotics",
         what: "Robot Operating System (ROS): A flexible framework and set of tools, libraries, and conventions for robot software development. It provides operating system-like services like hardware abstraction, device drivers, message-passing, package management, etc.",
         why: "Standardizes robot software development, promotes code reuse, simplifies complex system integration, and fosters a large community.",
@@ -866,6 +866,7 @@ const topicContent = document.getElementById('topicContent');
 const mainPage = document.getElementById('main-page'); // Keep reference if needed elsewhere
 const topicPage = document.getElementById('topic-page');
 const backButton = document.getElementById('backButton');
+
 
 // --- Globals ---
 let nodes = [];
