@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Want to Learn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="graphCanvas"></canvas>
+
+    <!-- Top bar container -->
+    <div id="main-page" class="center-content">
+        <h1 class="main-title">🔗 📚 AI Knowledge</h1>
+        <input type="text" id="searchBar" placeholder="Search AI Topics..." aria-label="Search AI topics">
+        <button id="searchButton">Search</button>
+    </div>
+
+    <!-- Category filter buttons -->
+    <div id="categoryButtons">
+        <!-- Buttons will be generated here by JavaScript -->
+    </div>
+
+    <!-- Topic display page (hidden initially) -->
+    <div id="topic-page" class="hidden">
+        <button id="backButton">Back to Home</button>
+        <div id="topicContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

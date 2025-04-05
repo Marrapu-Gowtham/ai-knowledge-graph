@@ -1,0 +1,227 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars on body */
+    background-color: #000000; /* Black background */
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Canvas Styling */
+#graphCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind the content */
+    display: block;
+}
+
+/* Top Bar Container - UPDATED */
+.center-content { /* This is #main-page */
+    position: absolute;
+    top: 15px; /* Position near the top */
+    left: 50%;
+    transform: translateX(-50%); /* Horizontal centering */
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically align items in the bar */
+    gap: 15px; /* Spacing between title and search */
+    width: auto; /* Width based on content */
+    max-width: 90%; /* Prevent excessive width */
+    /* Optional background/padding for visual separation */
+    /* background-color: rgba(10, 10, 10, 0.6); */
+    padding: 5px 10px;
+    /* border-radius: 8px; */
+}
+
+/* Title Styling - UPDATED */
+.main-title {
+    border: 1px solid rgb(232, 150, 9);
+    font-size: 1.6em;
+    font-weight: 200;
+    margin: 0; /* Remove default margins */
+    color: #E50914;
+    white-space: nowrap; /* Prevent wrapping */
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 2px 8px; /* Padding inside border */
+}
+
+/* Search Bar Styling */
+#searchBar {
+    padding: 8px 12px;
+    font-size: 0.95em;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 30, 0.85);
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    min-width: 200px;
+    vertical-align: middle; /* Helps alignment */
+}
+
+#searchBar:focus {
+    border-color: #f1f3f0;
+    background-color: rgba(252, 250, 250, 0.95);
+    color: #000;
+}
+
+#searchBar::placeholder {
+    color: #b92525;
+    opacity: 1;
+ }
+ #searchBar:-ms-input-placeholder { color: #f7f3f3; }
+ #searchBar::-ms-input-placeholder { color: #f9f6f6; }
+
+/* Search Button Styling */
+#searchButton {
+    padding: 8px 15px;
+    font-size: 0.95em;
+    background-color: rgb(10, 10, 10);
+    color: #ccc;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+    vertical-align: middle; /* Helps alignment */
+}
+
+#searchButton:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+    border-color: #888;
+}
+
+/* Category Buttons Styling */
+#categoryButtons {
+    position: absolute;
+    bottom: 15px; /* Position at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 10;
+    max-width: 90vw;
+    overflow-x: auto; /* Horizontal scroll if needed */
+    padding: 5px 10px;
+    background-color: rgba(15, 15, 15, 0.7);
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+#categoryButtons button {
+    padding: 6px 12px;
+    font-size: 0.85em;
+    background-color: rgba(250, 239, 239, 0.85);
+    color: #0a0a0a;
+    border: 1px solid #fcfafa;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#categoryButtons button:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+    border-color: #151414;
+}
+
+#categoryButtons button.active {
+    background-color: rgba(9, 9, 9, 0.95);
+    color: #f1e9e9;
+    border-color: #aaa;
+    font-weight: bold;
+}
+
+/* Category Buttons Scrollbar Styling (Optional) */
+#categoryButtons::-webkit-scrollbar { height: 6px; }
+#categoryButtons::-webkit-scrollbar-track { background: rgba(20, 20, 20, 0.5); border-radius: 3px; }
+#categoryButtons::-webkit-scrollbar-thumb { background: #ece6e6; border-radius: 3px; }
+#categoryButtons::-webkit-scrollbar-thumb:hover { background: #888; }
+
+/* Topic Page Styling */
+#topic-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+    z-index: 20; /* Above graph and top bar */
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 60px 40px 40px 40px; /* Padding (more top for back button) */
+    box-sizing: border-box;
+    color: #e0e0e0;
+}
+
+#topicContent {
+    margin: 20px auto; /* Center content area */
+    padding: 25px;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+#topicContent h2 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+#topicContent h3 {
+    color: #ddd;
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#topicContent p {
+    line-height: 1.7; /* Slightly increased line height */
+    margin-bottom: 1em;
+}
+
+#topicContent ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-left: 0;
+}
+
+#topicContent li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Back Button Styling */
+#backButton {
+    position: absolute; /* Position relative to #topic-page */
+    top: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    font-size: 1.0em;
+    background-color: rgba(40, 40, 40, 0.85);
+    color: #ccc;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    z-index: 25; /* Ensure it's clickable above content */
+}
+
+#backButton:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+    border-color: #888;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
